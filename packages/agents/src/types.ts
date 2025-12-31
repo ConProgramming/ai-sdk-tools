@@ -369,6 +369,15 @@ export interface AgentDataParts {
   suggestions: {
     prompts: string[];
   };
+  /**
+   * Client-side tool call notification (transient)
+   * Signals that a tool call requires client-side execution
+   */
+  "client-tool-call": {
+    toolCallId: string;
+    toolName: string;
+    args: unknown;
+  };
   // Allow extension with custom data parts
   [key: string]: unknown;
 }

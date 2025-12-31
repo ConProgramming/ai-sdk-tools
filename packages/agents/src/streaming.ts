@@ -114,3 +114,32 @@ export function writeSuggestions(
 ): void {
   writeDataPart(writer, "data-suggestions", { prompts }, { transient: true });
 }
+
+/**
+ * Write a client-side tool call notification.
+ *
+ * This notifies the client that a tool call requires client-side execution.
+ * The client should handle this using the useClientTools hook.
+ *
+ * @param writer - The UI message stream writer
+ * @param toolCall - The tool call information
+ *
+ * @example
+ * ```typescript
+ * writeClientToolCall(writer, {
+ *   toolCallId: 'call_123',
+ *   toolName: 'copyToClipboard',
+ *   args: { text: 'Hello, World!' }
+ * });
+ * ```
+ */
+export function writeClientToolCall(
+  writer: UIMessageStreamWriter,
+  toolCall: {
+    toolCallId: string;
+    toolName: string;
+    args: unknown;
+  },
+): void {
+  writeDataPart(writer, "data-client-tool-call", toolCall, { transient: true });
+}

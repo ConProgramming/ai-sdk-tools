@@ -36,3 +36,12 @@ export {
   useDataPart,
   useDataParts,
 } from "./use-data-parts";
+// Client-side tools hook
+export {
+  type PendingToolCall,
+  type ToolHandler,
+  type ToolHandlers,
+  type UseClientToolsOptions,
+  type UseClientToolsReturn,
+  useClientTools,
+} from "./use-client-tools";

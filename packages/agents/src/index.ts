@@ -1,5 +1,19 @@
 // Core exports
 export { Agent } from "./agent.js";
+// Client-side tools
+export {
+  clientTool,
+  getClientToolNames,
+  isClientTool,
+} from "./client-tools.js";
+export type {
+  ClientToolConfig,
+  ClientToolHandler,
+  ClientToolHandlers,
+  ClientToolInput,
+  ClientToolResult,
+  PendingClientToolCall,
+} from "./client-tools.js";
 export type { ContextOptions, ExecutionContext } from "./context.js";
 // Context management
 export { createExecutionContext, getContext } from "./context.js";
@@ -37,6 +51,7 @@ export { AgentRunContext } from "./run-context.js";
 // Streaming utilities
 export {
   writeAgentStatus,
+  writeClientToolCall,
   writeDataPart,
   writeRateLimit,
 } from "./streaming.js";
